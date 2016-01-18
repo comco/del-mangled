@@ -1,0 +1,63 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{geometry}
+
+\title{Mangled Children \\ \large Quantum exploration of a classical epistemic
+ puzzle}
+\author{Krasimir Georgiev}
+
+\begin{document}
+\maketitle
+\section*{Introduction} The Muddy children puzzle is a well-known epistemic
+puzzle that illustrates some non-trivial and at first sight even paradoxical
+features of the dynamics of knowledge. It can however be easily modeled as a
+relational epistemic model and analyzed completely using basic dynamic epistemic
+logic. Quantum physics is normally perceived as a notoriously unintuitive
+discipline. It lacks connections with people's real world intuitions and
+predicts bizarre, paradoxical behaviours. In this report we explore quantum
+analogues of the Muddy children puzzle. These variants sometimes exhibit bizarre
+behaviours, and we use epistemic techniques and concepts to shed some light on
+the reasons behind them.
+
+\section*{Muddy children} The classical Muddy children puzzle goes as follows:
+several clever (logically omniscient) children are playing with mud; here comes
+the father and tells them (publicly announces): some of you have mud on their
+foreheads. Then he proceeds to ask the same question: do you know if you have
+mud on your forehead; each time the children all answer (publicly announce) at
+the same time truthfully. Each child can see everyone else's foreheads, except
+for its own. During the first several rounds, everyone answers negatively. But
+then, at some round, exactly the muddy children answer positively. This is
+seemingly paradoxical: by listening to the same answers of the same question
+over and over again, the children come to learn more.
+
+For $n$ children, we may model the puzzle by an epistemic model where the worlds
+are all the strings over $\{0, 1\}$ of length $n$, where $1$ at position $i$
+denotes that the $i$-th child has mud on its forehead (and $0$ that it's clean).
+The indistinguishability relation $R_i$ for the $i$-th child contains all the
+pairs of strings that possibly differ only at the $i$-th position.
+Suppose that $u$ of the children are actually muddy. The public announcement of
+the father effectively deletes the world $0^n$. At round $r = 1, 2, \dots, u-1$,
+the public announcements of the children delete all the worlds having $r$ ones.
+At round $r = u$, since all worlds with a lower number of ones are deleted, all
+the muddy children can distinguish the real world, so they give a positive
+answer.
+
+\section*{Quantum reading}
+A postulate of quantum physics is that systems can be modelled as unit vectors
+(or equivalently, one dimensional subspaces) in some Hilbert space.
+In the quantum world, observations are both limited and limiting. Only the
+``testable'' properties (corresponding to closed subspaces of the Hilbert space) 
+can possibly be observed, and observing them leads to a real, ontic ``collapse''
+of the quantum system as a projection into the testable property subspace. On
+top of that the result of the observation is probabilistic, making most of the
+implicit information in the quantum state inaccessible by observations.
+
+\section*{Qubit foreheads}
+
+\section*{Shared mud}
+
+\section*{Spin mud}
+
+\end{document}
