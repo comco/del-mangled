@@ -3,6 +3,9 @@
 \usepackage[english]{babel}
 \usepackage{amsmath,amsthm,amssymb}
 \usepackage{geometry}
+\usepackage{braket}
+
+\newcommand{\HH}{\mathcal{H}}
 
 \title{Mangled Children \\ \large Quantum exploration of a classical epistemic
  puzzle}
@@ -45,17 +48,112 @@ the muddy children can distinguish the real world, so they give a positive
 answer.
 
 \section*{Quantum reading}
-A postulate of quantum physics is that systems can be modelled as unit vectors
-(or equivalently, one dimensional subspaces) in some Hilbert space.
+A postulate of quantum physics is that quantum states can be modelled as unit 
+vectors
+$s \in \mathcal{H}, |s| = 1$ in some Hilbert space. This is equivalent (up to a
+sign, which is insignificant with respect to measurements) with the one
+dimensional subspaces interpretation of quantum states, and it more easy to work
+with numerically.
+
 In the quantum world, observations are both limited and limiting. Only the
 ``testable'' properties (corresponding to closed subspaces of the Hilbert space) 
 can possibly be observed, and observing them leads to a real, ontic ``collapse''
 of the quantum system as a projection into the testable property subspace. On
 top of that the result of the observation is probabilistic, making most of the
-implicit information in the quantum state inaccessible by observations.
+implicit information in the quantum state inaccessible for observers.
 
-\section*{Qubit foreheads}
+These basic quantum principles force us to reconsider the basic ingredients of
+the Muddy children puzzle if we hope to achieve a quantum version of it. Since
+the detection of mud amounts to an observation of the quantum system, which
+collapses it, there may be no definite presence or absence of mud on the
+children's foreheads at all. In general, the forehead might exist in a
+superposition of the presence and absence of mud, that is additionally entangled
+with the foreheads of the other children. Since the observation updates the
+initial quantum state irreversibly, it no longer makes much sense to talk about
+the absence or presence of mud on any child's forehead in general. A possible
+adaptation is: to say ``if you observe your forehead, it is possible that you
+will see some mud''. Another variation might be: ``if you observe your forehead,
+you will surely see some mud'', or even ``you will observe your forehead being
+muddy with probability $P \in [0, 1]$''. Let us see what these mean in terms of
+the states of the system. Let $s \in \HH$ be unit vector corresponding to the 
+real state of the system and let $m \in \HH$ be the unit vector corresponding to
+subspace of the forehead observation. The first interpretation corresponds to
+the non-orthogonality of $s$ and $m$: $s \not\perp m$. The second corresponds to
+the perpendicularity of $s$ and $m$, and the third corresponds to the following:
+in an orthonormal basis for $\HH$ containing $m$, the state $s$ will have a
+coefficient (amplitude) $\alpha \in \mathbb{C}$ along $m$ for which the
+probability is the square of the amplitude: $P = |\alpha|^2$. In this version,
+we also need to assume that there are infinitely many copies of the initial
+quantum system, and after performing infinitely many observations, the
+probability in the limit for a muddy forehead will reach $P$.
 
+Another issue that pops up is the simultaneous observations. Since an
+observation has an ontic effect, it is in general impossible for all observers
+to observe the system at the same time. Only in specific cases (as in the next
+section) will it be possible to combine two observable properties and to get an
+observable property. So in general, the interpretation of disjunction might be
+problematic, because it might lead to a non-observable property. We may need to
+introduce a total order between the observations, so that the system first
+collapses to the subspace of the first observation first, then to the subspace
+of the next, and so on. Note that this holds only for the quantum observation
+part of the action of a child; it is still possible for them, after having made
+all observations, to answer to the question posed by the father classically
+simultaneously (at least up to the epistemic characteristics of their answers).
+For convenience, we will number the children by $1, 2, \dots, n$ and we will
+assume that they make their observations in this order.
+
+TODO
+Also the question ``do you know if you are dirty'' needs an adaptation. It is 
+``after doing your quantum observation, do you know if you did an observation of
+your forehead, you will be dirty''.
+
+\section*{Qubit mud}
+Let us consider a situation in which there are just $n = 2$ children, Alice and
+Bob and there is a qubit for the mud on each one's forehead. Alice's forehead
+has two possible observable states: $\ket{a}$, in which case her forehead is
+clean, and $\ket{A}$, in which case she is dirty. Similarly for Bob the states
+are $\ket{b}$ and $\ket{B}$. A general state of this system is a unit vector in
+a four-dimensional Hilbert space $\HH$ having the form $s = \delta \ket{ab} +
+\beta \ket{aB} + \alpha \ket{Ab} + \gamma \ket{AB}$, where $\alpha, \beta,
+\gamma, \delta \in \mathbb{C}$ and $|\alpha|^2 + |\beta|^2 + |\gamma|^2 +
+|\delta|^2 = 1$.  Assume that this is common knowledge, so our initial epistemic
+model contains all these states as possible worlds.  Also, since observation has
+an ontic effect, the kids don't really look at each other's foreheads, so the
+indistinguishability relation $R_i$ is the full relation for both of them.
+
+Then comes the quantum omniscient father (he is cool because he can see the
+complex coefficients along the basis vectors \emph{without} disturbing the
+system), and tells them: some of you has mud on its forehead. In this particular
+case, there is a yet another interesting quantum interpretation of this statement:
+that the coefficient $\delta$ is zero. Observe that this is a different
+interpretation than any of the interpretations discussed in the previous
+section. Here, since the property of absence of mud on both foreheads actually
+corresponds to the basis vector $\ket{ab}$, it is testable, and we give the
+rough interpretation as: ``well kids, in this particular situation, as you can
+see, you may in principle observe both foreheads at the same time, and if you
+did that, you'll surely not observe two clean ones''. This public announcement
+effectively deletes the states having $\delta \neq 0$, leaving us with an
+epistemic model containing states that are the unit vectors of the form 
+$s = \beta \ket{aB} + \alpha \ket{Ab} + \gamma \ket{AB}$.
+
+Now the father asks the children if they know if they are dirty (after a quantum
+observation) and Alice observes Bob's forehead. By doing so, she collapses the
+system to a state that is consistent to the answer she gets. In detail:
+\begin{itemize}
+    \item She observes that Bob is muddy, which might happen with probability 
+        $|\beta|^2 + |\gamma|^2$. In this case, the system  collapses to the state
+        $s' = \frac{\beta \ket{aB} + \gamma \ket{AB}}{|\beta|^2 + |\gamma|^2}$.
+        She confuses all the states of this form, and she answers ``no'' to the
+        question of the father. TODO: BOB?
+    \item She observes that Bob isn't muddy, which might happen with probability
+        $|\alpha|^2$. In this case, the system collapses to the state $s'' =
+        \frac{\alpha \ket{aB}}{|\alpha|^2}$, which is a unit complex multiple of
+        the basis vector $\ket{aB}$. She of course confuses all the states of
+        this form, but she knows that the only possible outcome of measuring her
+        dirtiness at any state of the form $s''$ must be $\ket{a}$, so she now
+        knows that she is dirty and answers ``yes'' to the question of the
+        father. TODO: BOB?
+\end{itemize}
 \section*{Shared mud}
 
 \section*{Spin mud}
