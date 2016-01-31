@@ -59,7 +59,7 @@ space $\HH$ (over $\CC$). Quantum evolution is captured by unitary
 transformations. The possible properties of a quantum system correspond to
 subsets of the state space. The properties corresponding to the closed subspaces
 of $\HH$ are called testable. Only testable properties of a quantum system can
-be observed in principle, which is in a sharp contrast with the classical case
+be observed in principle~\cite{wlogqm}, which is in a sharp contrast with the classical case
 where any property of a physical system can be observed in principle. This model
 of the quantum world necessarily contains much more ``quantum information'' than
 what is physically accessible. Many interesting properties of a quantum systems,
@@ -69,7 +69,8 @@ Quantum observations of testable properties have the peculiar property of
 possibly probabilistically altering the real world state of a quantum system. As
 such, quantum observations cannot be treated as a purely epistemic actions
 extracting knowledge about the quantum system, but as a complex dynamic action
-on the quantum system, having both epistemic and ontic side effects.
+on the quantum system, having both epistemic and ontic side
+effects~\cite{wlogqm}~\cite{dlpqb}.
 
 The dynamics of quantum observations works as follows. Suppose the quantum
 system is in a state $\spn s$ for some unit vector $s \in \HH$ and suppose we
@@ -134,6 +135,8 @@ The next issue is quantum disjunction. We are concerned in interpreting the
 initial announcement of the father: someone is muddy. Since the union of closed
 subspaces is not necessarily a closed subspace, in general the classical version
 of that statement does not correspond to an observable property of the system.
+In general, quantum disjunction corresponds to the span of the classical
+disjunction and captures the concept of superpositions~\cite{wlogqm}.
 In the next section, we will analyze a version of the puzzle in which the
 property \emph{after (joint) observation, it is impossible that everyone is
 clean} happens to be a testable property. There is a weaker form of quantum
@@ -159,11 +162,14 @@ the following plausible adaptation:
     typically observing the others), do you know that if your face is observed,
 it will (possibly/surely) be dirty?}
 
-\section*{Composite quantum mud}
+\section*{Compound quantum mud}
 For our first concrete version of the puzzle, let us consider a situation in
 which there are just $n = 2$ children: Alice and Bob. There is a qubit for the
 mud on each one's face. The state space of this quantum system is the set of
-one-dimensional subspaces of the four dimensional Hilbert space $\HH$ with an
+one-dimensional subspaces of the four dimensional Hilbert space $\HH =
+(\CC^2)^{\otimes 2}$
+constructed from the tensor product of two two-dimensional identical Hilbert
+spaces~\cite{lqp22} with an
 orthonormal basis $\{\ket{ab}, \ket{aB}, \ket{Ab}, \ket{AB}\}$. Observing that
 Alice's face is muddy corresponds to the subspace $\spn\{\ket{Ab},\ket{AB}\} =
 \spn\ket{A}$\footnote{We may think about $\ket{A}$ either as an abuse of
@@ -265,7 +271,7 @@ correspond to the possible outcomes of observing Alice's face: $\ket{a} =
 \ket{1}}{\sqrt{2}}$ (see Figure~\ref{fig:shab})\footnote{Incidentally, this
 gives us an interesting quantum religious possibility that God created Eve as a
 unitary transformation of Adam (which, as opposed to the classical case,
-automatically works in the opposite direction too).}.
+automatically works in the opposite direction).}.
 \begin{figure}
     \centering
 \begin{tikzpicture}[scale=1.5]
@@ -347,15 +353,29 @@ $\braket{+|y_+} = \frac{1}{2}(\bra{0} + \bra{1})(\ket{0} + i\ket{1}) =
 $\frac{1}{4}(1+i)(1-i) = \frac{1}{2}$. Similarly, if $s' = \ket{-}$, since
 $\braket{-|y_+} = \frac{1}{2}(\bra{0} - \bra{1})(\ket{0} + i\ket{1}) =
 \frac{1-i}{2}$, the probability of observing a muddy YChris is still
-$\frac{1}{2}$. Similarly we can see that the same happens in general: \emph{
-observing any child makes the other two's faces completely uncertain.} Again,
-this is an instance of the uncertainty principle.
-
+$\frac{1}{2}$. Similarly we can see that the same happens in general:
+\emph{observing any child makes the other two's faces completely uncertain.}
+We may see this again as an instance of the uncertainty principle.
 
 \begin{thebibliography}{9}
 \bibitem{corrkn}
 A. Baltag, S. Smets. ``Correlated Knowledge, An Epistemic-Logic View on 
 Quantum Entanglement'', International Journal of Theoretical Physics
+
+\bibitem{wlogqm}
+A. Baltag, S. Smets. ``What can Logic Learn from Quantum Mechanics?'',
+presented at the ECAP 2005 workshop on quantum information in Lisbon,
+Portugal, 2005
+
+\bibitem{lqp22}
+A. Baltag, S. Smets. ``LQP: The Dynamic Logic of Quantum Information'', section
+2.2. 
+Mathematical Structures in Computer Science, 16 (3): 491-525, 2006. 
+Cambridge University Press.
+
+\bibitem{dlpqb}
+A. Baltag, S. Smets. ``A Dynamic - Logical Perspective on Quantum Behavior'', 
+in I. Douven and L. Horsten (eds.) Studia Logica , special issue on Applied Logic in the Philosophy of Science, vol 89, pp.185-209, 2008.
 
 \bibitem{geomcs}
 L. Dorst, D. Fontijne; S. Mann. ``Geometric algebra for computer science: an 
